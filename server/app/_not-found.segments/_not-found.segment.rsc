@@ -1,0 +1,4 @@
+1:"$Sreact.fragment"
+2:I[96757,["/_next/static/chunks/01fae3b89f480f5d.js"],"default"]
+3:I[7805,["/_next/static/chunks/01fae3b89f480f5d.js"],"default"]
+0:{"buildId":"K12OGuIDuwnFxisWGd_SC","rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"loading":null,"isPartial":false}
