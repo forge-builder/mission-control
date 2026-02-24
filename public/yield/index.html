@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base Yield Scanner</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'SF Mono', monospace; background: #0a0a0f; color: #00ff88; min-height: 100vh; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        h1 { color: #0052ff; font-size: 28px; margin-bottom: 8px; }
+        .subtitle { color: #666; margin-bottom: 30px; font-size: 14px; }
+        .loading { color: #ffe600; }
+        .error { color: #ff2d63; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th { text-align: left; padding: 12px 8px; color: #666; border-bottom: 1px solid #333; font-size: 12px; }
+        td { padding: 12px 8px; border-bottom: 1px solid #1a1a2e; font-size: 14px; }
+        tr:hover { background: #1a1a2e; }
+        .apy { color: #00ff88; font-weight: bold; }
+        .apy-negative { color: #ff2d63; }
+        .tvl { color: #00fff5; }
+        .chain { color: #a0a0a0; }
+        .updated { color: #666; font-size: 12px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🟦 Base Yield Scanner</h1>
+        <p class="subtitle">Live yield opportunities on Base • Powered by DeFiLlama</p>
+        
+        <div id="data">
+            <p class="loading">Loading yield data...</p>
+        </div>
+        
+        <p class="updated" id="updated"></p>
+    </div>
+
+    <script>
+        async function loadYields() {
+            try {
+                const response = await fetch('https://yields.llama.fi/pools');
+                const result = await response.json();
+                
+                // Filter for Base chain
+                const basePools = result.data.filter(p => p.chain === 'Base' && p.tvlUsd > 10000);
+                
+                // Sort by APY
+                basePools.sort((a, b) => b.apy - a.apy);
+                
+                // Take top 15
+                const top = basePools.slice(0, 15);
+                
+                if (top.length === 0) {
+                    document.getElementById('data').innerHTML = '<p class="error">No yield data found for Base</p>';
+                    return;
+                }
+                
+                let html = '<table><thead><tr><th>Project</th><th>Token</th><th>TVL</th><th>APY</th></tr></thead><tbody>';
+                
+                top.forEach(pool => {
+                    const apyClass = pool.apy > 0 ? 'apy' : 'apy-negative';
+                    const tvl = pool.tvlUsd > 1000000 
+                        ? '$' + (pool.tvlUsd / 1000000).toFixed(1) + 'M'
+                        : '$' + (pool.tvlUsd / 1000).toFixed(0) + 'K';
+                    
+                    html += `<tr>
+                        <td>${pool.project}</td>
+                        <td>${pool.symbol}</td>
+                        <td class="tvl">${tvl}</td>
+                        <td class="${apyClass}">${pool.apy?.toFixed(2) || '0.00'}%</td>
+                    </tr>`;
+                });
+                
+                html += '</tbody></table>';
+                document.getElementById('data').innerHTML = html;
+                document.getElementById('updated').textContent = 'Updated: ' + new Date().toLocaleString();
+                
+            } catch (error) {
+                document.getElementById('data').innerHTML = '<p class="error">Error loading data: ' + error.message + '</p>';
+            }
+        }
+        
+        loadYields();
+    </script>
+</body>
+</html>
