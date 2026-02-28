@@ -90,13 +90,13 @@ Eine interaktive, pixel-art UI im Bankr-Stil. Nicht nur eine Dashboard – sonde
 
 ## V2 Features (Phase 1)
 
-1. [ ] Pixel Design System implementieren
-2. [ ] Custom Fonts laden (Press Start 2P, VT323)
-3. [ ] Header mit Status
-4. [ ] Task Board mit echten Daten
-5. [ ] Memory Stream
-6. [ ] Calendar Grid
-7. [ ] Stats Panel mit Wallet
+1. [x] Pixel Design System implementieren
+2. [x] Custom Fonts laden (Press Start 2P, VT323)
+3. [x] Header mit Status
+4. [x] Task Board mit echten Daten (Build Session 2 - Feb 28)
+5. [x] Memory Stream (dynamisch gelesen)
+6. [x] Calendar Grid (Cron Jobs)
+7. [x] Stats Panel mit Wallet (hardcoded, nicht live)
 
 ---
 

@@ -9,6 +9,8 @@
   --accent-green: #00FF88;
   --accent-yellow: #FFE600;
   --border-color: #333333;
+  --font-pixel: "Press Start 2P", cursive;
+  --font-terminal: "VT323", monospace;
 }
 
 * {
@@ -18,4 +20,9 @@
 body {
   background: var(--bg-primary);
   color: white;
+  font-family: var(--font-terminal);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-pixel);
 }
