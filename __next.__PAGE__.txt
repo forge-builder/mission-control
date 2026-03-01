@@ -1,9 +1,6 @@
 1:"$Sreact.fragment"
-2:I[23725,["/_next/static/chunks/e643216e9ec8d736.js"],"ClientPageRoot"]
-3:I[96900,["/_next/static/chunks/0d691275cdfede5e.js"],"default"]
-6:I[85438,["/_next/static/chunks/e643216e9ec8d736.js"],"OutletBoundary"]
-7:"$Sreact.suspense"
-0:{"buildId":"9-U-EifZZj5UoCo_dV5Oh","rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@4","$@5"]}}],[["$","script","script-0",{"src":"/_next/static/chunks/0d691275cdfede5e.js","async":true}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"loading":null,"isPartial":false}
-4:{}
-5:"$0:rsc:props:children:0:props:serverProvidedParams:params"
-8:null
+2:I[5105,["/_next/static/chunks/340bcbbfb6ded116.js"],"default"]
+3:I[97367,["/_next/static/chunks/2f236954d6a65e12.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"buildId":"1rgRRy84MLQ2yrY3stEmy","rsc":["$","$1","c",{"children":[["$","$L2",null,{"tasks":[{"title":"REVENUE","assignee":"roger","progress":11},{"title":"Gas tracker alert","assignee":"roger","progress":17},{"title":"Projects","assignee":"roger","progress":12},{"title":"Todo","assignee":"roger","progress":86}],"memories":[{"title":"**INCENTIVE:** Tomas gibt mir $10 auf meine Wallet","date":"tomorrow-mission","type":"system"},{"title":"- ACP Jobs checken","date":"today","type":"system"},{"title":"| Project | Status |","date":"progress-log","type":"system"},{"title":"| Component | Status |","date":"heartbeat-2026-02-19-07","type":"system"},{"title":"1. **automation-workflows** (installed) - Design/i","date":"2026-03-01","type":"system"}],"cronJobs":[{"name":"Self-Improvement Digest","time":"5:00","status":"active"},{"name":"Morning Briefing","time":"8:00","status":"active"},{"name":"ACP Job Check","time":"8,14,20","status":"active"},{"name":"Skill Explorer","time":"10:00","status":"active"},{"name":"Evening Report","time":"20:00","status":"active"}]}],[["$","script","script-0",{"src":"/_next/static/chunks/340bcbbfb6ded116.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+5:null
